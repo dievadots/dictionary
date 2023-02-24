@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+main {
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 0 25%;
+    gap: 30px;
+}
+
+.main--theme-dark {
+    background-color: #262739;
+    color: #8789a5;
+}
+
+
+
+.main--font-sans-serif {
+    font-family: sans-serif;
+}
+
+.main--fornt-serif {
+    font-family: serif;
+}
+
+.main--font-monospace {
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    gap: 10px;
+}
+
+.logo {
+    height: 50px;
+    margin-right: auto;
+}
+
+.font-select {
+    cursor: pointer;
+    direction: rtl;
+    border: none;
+    text-align: left;
+    background-color: transparent;
+}
+
+.font-select:focus {
+    outline: none;
+}
+
+.main--theme-dark .font-select {
+    color: #abadc9;
+}
+
+.font-select option {
+    direction: ltr;
+    color: #000;
+}
+
+
+
+.theme {
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    width: 50px;
+    height: 25px;
+    border-radius: 999px;
+    padding: 4px;
+}
+
+.theme--dark {
+    background-color: #29253c;
+}
+
+.theme-circle {
+    height: 100%;
+    width: 50%;
+    background-color:#262739;
+    border-radius: 999px;
+
+
+    animation: theme-toggle-off .3s forwards;
+}
+
+.theme--dark .theme-circle {
+    background-color: #fff;
+    transform: translateX(0%);
+    animation: theme-toggle-on .3s forwards;
+}
+
+@keyframes theme-toggle-on {
+    0% {
+        width: 50%;
+        transform: translate(0) scaleY(1);
+    }
+    
+    50% {
+        transform: translate(0) scaleY(.7);
+        width: 100%;
+    }
+
+    100% {
+        width: 50%;
+        transform: translate(100%) scaleY(1);
+    }
+}
+
+@keyframes theme-toggle-off {
+    0% {
+        width: 50%;
+        transform: translate(100%) scaleY(1);
+    }
+    
+    50% {
+        transform: translate(0) scaleY(.7);
+        width: 100%;
+    }
+    
+    100% {
+        width: 50%;
+        transform: translate(0) scaleY(1);
+    }
+}
+
+
+
+
+.search {
+    display: flex;
+    width: 100%;
+}
+
+.search-input {
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    flex-grow: 1;
+    background-color: #e9e9e9;
+    padding: 15px;
+    font-size: 17px;
+}
+
+.main--theme-dark .search-input, .main--theme-dark .search-button {
+    background-color:#1d1d2d;
+    color: #eae8fc7a;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    cursor: pointer;
+    width: 70px;
+    border: none;
+    background-color: #e9e9e9;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.search-button-icon {
+    opacity: .3;
+    width: 40%;
+}
+
+.main--theme-dark .search-button-icon {
+    filter: invert(1);
+}
+
+
+
+
+
+
+
+
+.word-info {
+    width: 100%;
+    display: flex;
+}
+
+.word-info-left {
+    flex-grow: 1;
+}
+
+.word {
+    font-size: 50px;
+    word-break: break-all;
+}
+
+.main--theme-dark .word {
+    color: #fff;
+}
+
+.word-pronunciation {
+    color: #c626e2;
+    font-size: 20px;
+}
+
+.word-info-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.word-play {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.word-play img {
+    width: 60px;
+
+    transition: transform .1s;
+}
+
+.word-play:hover img {
+    transform: rotateZ(10deg);
+}
+
+
+
+
+
+.word-type {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.word-type-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.main--theme-dark .word-type-header {
+    color: #d7d9f6
+}
+
+.word-type-header hr {
+    display: inline-block;
+    border: none;
+    flex-grow: 1;
+    height: 2px;
+    background-color: #cdcdcd;
+}
+
+.main--theme-dark .word-type-header hr {
+    background-color: #48495e;
+}
+
+
+.word-meaning-header {
+    
+    color: #a5a5a5;
+}
+
+.main--theme-dark .word-meaning-header {
+    color: #b7b9cd;
+}
+
+
+.word-meanings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 30px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+    main {
+        padding: 1vh 8%;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .word-info {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .word-play {
+        width: 100%;
+    }
+
+    .word-play img {
+        width: 30%;
+    }
+}
